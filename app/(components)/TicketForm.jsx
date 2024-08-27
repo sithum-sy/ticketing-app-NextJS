@@ -21,14 +21,14 @@ const TicketForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await fetch("/api/Tickets", {
-      method: "POST",
+      method: "post",
       body: JSON.stringify({ formData }),
       "content-type": "application/json",
     });
 
-    if (!res.ok) {
-      throw new Error("Failed to create Ticket.");
-    }
+    // if (!res.ok) {
+    //   throw new Error("Failed to create Ticket.");
+    // }
 
     router.refresh();
     router.push("/");
